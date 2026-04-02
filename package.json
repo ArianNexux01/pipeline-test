@@ -1,6 +1,6 @@
 {
   "name": "@bento.julio/find-min-array",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Find the minimum number in an array using multiple algorithms",
   "main": "src/index.js",
   "exports": {

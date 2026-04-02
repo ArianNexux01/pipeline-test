@@ -1,6 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert/strict");
-const { findMin, linearMin, divideAndConquerMin, tournamentMin, heapMin } = require("../src/index");
+const { findMin, linearMin, divideAndConquerMin, tournamentMin, heapMin, binaryMin } = require("../src/index");
 
 const algorithms = [
   ["linear", linearMin],
@@ -44,6 +44,36 @@ for (const [name, fn] of algorithms) {
     });
   });
 }
+
+describe("binary", () => {
+  it("finds min in a sorted array", () => {
+    assert.equal(binaryMin([1, 2, 3, 4, 5]), 1);
+  });
+
+  it("handles single element", () => {
+    assert.equal(binaryMin([42]), 42);
+  });
+
+  it("handles negative numbers (sorted)", () => {
+    assert.equal(binaryMin([-10, -5, -1, 0, 3]), -10);
+  });
+
+  it("handles all identical values", () => {
+    assert.equal(binaryMin([7, 7, 7, 7]), 7);
+  });
+
+  it("handles two elements", () => {
+    assert.equal(binaryMin([2, 10]), 2);
+  });
+
+  it("throws on empty array", () => {
+    assert.throws(() => binaryMin([]), /non-empty/);
+  });
+
+  it("throws on non-array input", () => {
+    assert.throws(() => binaryMin("not an array"), /non-empty/);
+  });
+});
 
 describe("findMin (dispatcher)", () => {
   it("defaults to linear algorithm", () => {

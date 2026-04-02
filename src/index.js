@@ -24,7 +24,7 @@ function findMin(arr, algorithm = "linear") {
       return binaryMin(arr);
     default:
       throw new Error(
-        `Unknown algorithm "${algorithm}". Available: linear, divide-and-conquer, tournament, heap`
+        `Unknown algorithm "${algorithm}". Available: linear, divide-and-conquer, tournament, heap, binary`
       );
   }
 }
@@ -36,4 +36,5 @@ module.exports = {
   tournamentMin,
   heapMin,
   MinHeap,
+  binaryMin,
 };

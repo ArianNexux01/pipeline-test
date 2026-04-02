@@ -1,0 +1,16 @@
+{
+  "name": "find-min-array",
+  "version": "1.0.0",
+  "description": "Find the minimum number in an array using multiple algorithms",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./algorithms/*": "./src/algorithms/*.js"
+  },
+  "scripts": {
+    "test": "node --test tests/findMin.test.js"
+  },
+  "keywords": ["min", "array", "algorithm", "minimum", "search"],
+  "author": "bentojulio",
+  "license": "MIT"
+}
